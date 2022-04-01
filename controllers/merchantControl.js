@@ -1,10 +1,9 @@
 const Merchant = require('../model/merchantModel')
 const db = require('../config/db')
-const fs = require('fs');
 
 class controllerMerchant {
 
-   // ADD PET to DB
+   // ADD merchant to DB
     static addMerchant(req, res) {
         let values=[req.body.id,
             req.body.password,
@@ -24,7 +23,7 @@ class controllerMerchant {
         })
     }
 
-    // GET PET from DB
+    // GET merchant from DB
     static selectMerchant(req, res) {
         db.query(Merchant.selectMerchant(),(err,result)=>{
             if(err) throw err;
@@ -33,7 +32,7 @@ class controllerMerchant {
         })
     }
     
-    // // UPDATE PET to DB
+    // // UPDATE merchant to DB
     static updateMerchant(req,res){
         const id = req.params.id;
         const name = req.body.name;
@@ -53,7 +52,7 @@ class controllerMerchant {
         });
     }
 
-    // DELETE PET from DB
+    // DELETE merchant from DB
     static deleteMerchant(req,res){
         const id = req.params.id  
         db.query(Merchant.deleteMerchant(),[id],(err, result)=> {  

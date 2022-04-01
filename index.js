@@ -9,6 +9,8 @@ const db = require('./config/db')
 
 const merchant = require('./routes/merchant')
 app.use('/merchant', merchant)
+const product = require('./routes/product')
+app.use('/product', product)
 
 app.get('/', (req, res) => {
   res.send('Merchant World!')
