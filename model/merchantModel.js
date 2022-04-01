@@ -4,26 +4,26 @@ const db = require('../config/db')
 class Merchant {
 
     static addMerchant() {
-        let sql = `INSERT INTO pet (id,password,name,address,join_date,phone_number) VALUES (?)`;
+        let sql = `INSERT INTO merchant (id,password,name,address,phone_number) VALUES (?)`;
         return sql;
         
     }
 
-    // static selectPet() {
-    //     let selectQuery = `SELECT * FROM pet`;
-    //     return selectQuery;
-    // }
+    static selectMerchant() {
+        let selectQuery = `SELECT * FROM merchant`;
+        return selectQuery;
+    }
 
-    // static updatePet(){
-    //     let updateQuery = `UPDATE pet SET name = ?, category = ?, status = ? WHERE id = ?` ;
-    //     return updateQuery;
+    static updateMerchant(){
+        let updateQuery = `UPDATE merchant SET name = ?, address = ?, phone_number = ? WHERE id = ?` ;
+        return updateQuery;
 
-    // }
+    }
 
-    // static deletePet(){
-    //     let deleteQuery = `DELETE FROM pet WHERE id =?`;
-    //         return deleteQuery;
-    // }
+    static deleteMerchant(){
+        let deleteQuery = `DELETE FROM merchant WHERE id =?`;
+            return deleteQuery;
+    }
 
 
 }

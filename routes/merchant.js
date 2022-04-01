@@ -5,15 +5,15 @@ const controllerMerchant = require('../controllers/merchantControl')
 
 
     // CREATE (FOR DB)
-    router.post('/add-pet', controllerMerchant.addMerchant)
+    router.post('/add', controllerMerchant.addMerchant)
     
-    // // READ (FROM DB)
-    // router.get('/get-pet', controllerMerchant.selectMerchant)
+    // READ (FROM DB)
+    router.get('/', controllerMerchant.selectMerchant)
     
-    // // UPDATE (FOR DB)
-    // router.put('/update/:id', controllerMerchant.updateMerchant)
+    // UPDATE (FOR DB)
+    router.put('/:id', controllerMerchant.updateMerchant)
     
-    // // DELETE (FOR DB)
-    // router.delete('/drop/:id',controllerMerchant.deleteMerchant)
+    // DELETE (FOR DB)
+    router.delete('/delete/:id',controllerMerchant.deleteMerchant)
     
     module.exports = router
