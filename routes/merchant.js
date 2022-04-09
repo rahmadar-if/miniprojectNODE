@@ -14,6 +14,17 @@ const controllerMerchant = require('../controllers/merchantControl')
     router.put('/:id', controllerMerchant.updateMerchant)
     
     // DELETE (FOR DB)
-    router.delete('/delete/:id',controllerMerchant.deleteMerchant)
+    router.delete('/delete/:id', controllerMerchant.deleteMerchant)
+
+    router.post('/login', controllerMerchant.login);
+
+    // router.get('/login', middleware.validate, (req, res) => {
+    //     res.status(200).json({ message: 'welcome' })
+    // });
+    
     
     module.exports = router
+
+    // login authentification
+    // set FK di DB
+    // akses product hanya ke beberapa Merchant  yg memiliki akses

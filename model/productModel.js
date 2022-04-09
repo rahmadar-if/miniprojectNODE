@@ -4,24 +4,24 @@ const db = require('../config/db')
 class Product {
 
     static addProduct() {
-        let sql = `INSERT INTO Product (id_product,name,quantity,price) VALUES (?)`;
+        let sql = `INSERT INTO product (id_product,name,quantity,price,id_merchant) VALUES (?)`;
         return sql;
         
     }
 
     static selectProduct() {
-        let selectQuery = `SELECT * FROM Product`;
+        let selectQuery = `SELECT * FROM product`;
         return selectQuery;
     }
 
     static updateProduct(){
-        let updateQuery = `UPDATE Product SET name = ?, quantity = ?, price = ? WHERE id_product = ?` ;
+        let updateQuery = `UPDATE product SET name = ?, quantity = ?, price = ? WHERE id_product = ?` ;
         return updateQuery;
 
     }
 
     static deleteProduct(){
-        let deleteQuery = `DELETE FROM Product WHERE id_product =?`;
+        let deleteQuery = `DELETE FROM product WHERE id_product =?`;
             return deleteQuery;
     
     }

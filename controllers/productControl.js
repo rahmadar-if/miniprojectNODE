@@ -8,7 +8,8 @@ class controllerProduct {
         let values=[req.body.id_product,
             req.body.name,
             req.body.quantity,
-            req.body.price];
+            req.body.price,
+            req.body.id_merchant];
         
 
         db.query(Product.addProduct(),[values],(err)=>{
@@ -33,16 +34,17 @@ class controllerProduct {
     
     // // UPDATE Product to DB
     static updateProduct(req,res){
-        const id = req.params.id_product;
+        const id_product = req.params.id_product;
         const name = req.body.name;
         const quantity = req.body.quantity;
         const price = req.body.price;
+        // const id_merchant = req.body.id_merchant;
 
-        db.query(Product.updateProduct(), [name,quantity,price,id], function (err) {
+        db.query(Product.updateProduct(), [name,quantity,price,id_product], function (err) {
             if(err){res.status(400).json(err)
                 return
             }
-            if(req.body.id!=id){
+            if(req.body.id_product!=id_product){
                 res.send("update product error")
                 return
             }

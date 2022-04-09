@@ -1,3 +1,5 @@
+const jwt = require('jsonwebtoken'); //npm i jsonwebtoken
+
 const Merchant = require('../model/merchantModel')
 const db = require('../config/db')
 
@@ -63,6 +65,25 @@ class controllerMerchant {
         res.status(200)
         res.send(result)
         });  
+    }
+
+    // LOGIN dan req JWT
+    static login(req, res) {
+
+        const data = req.body;
+
+        if (data.password === '1111') {
+
+            const token = jwt.sign({
+                id: data.id 
+            }, 'miniproject')
+
+            res.status(200).json({ token });
+
+        } else {
+            res.status(401).json({ message: 'wrong password' })
+        }
+
     }
 
 

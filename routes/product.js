@@ -11,7 +11,7 @@ const controllerProduct = require('../controllers/productControl')
     router.get('/', controllerProduct.selectProduct)
     
     // UPDATE (FOR DB)
-    router.put('/:id', controllerProduct.updateProduct)
+    router.put('/:id_product', controllerProduct.updateProduct)
     
     // DELETE (FOR DB)
     router.delete('/delete/:id',controllerProduct.deleteProduct)
