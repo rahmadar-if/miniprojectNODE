@@ -70,12 +70,12 @@ class controllerMerchant {
     // LOGIN dan req JWT
     static login(req, res) {
 
-        const data = req.body;
+        const body = req.body;
 
-        if (data.password === '1111') {
+        if (body.password === '1111') {
 
             const token = jwt.sign({
-                id: data.id 
+                id: body.id 
             }, 'miniproject')
 
             res.status(200).json({ token });

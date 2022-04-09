@@ -1,7 +1,7 @@
 const express = require('express')
-const fs = require('fs')
 const router = express.Router()
 const controllerMerchant = require('../controllers/merchantControl')
+const middleware = require('../middleware/auth')
 
 
     // CREATE (FOR DB)
@@ -18,9 +18,9 @@ const controllerMerchant = require('../controllers/merchantControl')
 
     router.post('/login', controllerMerchant.login);
 
-    // router.get('/login', middleware.validate, (req, res) => {
-    //     res.status(200).json({ message: 'welcome' })
-    // });
+    router.get('/login', middleware.validate, (req, res) => {
+        res.status(200).json({ message: 'Password Match' })
+    });
     
     
     module.exports = router
