@@ -6,4 +6,4 @@
 
 .env di masukan ke git ignore
 
-.env example :
+.env example : untuk  contoh upload di git

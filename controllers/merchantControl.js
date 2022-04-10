@@ -67,25 +67,6 @@ class controllerMerchant {
         });  
     }
 
-    // LOGIN dan req JWT
-    static login(req, res) {
-
-        const body = req.body;
-
-        if (body.password === '1111') {
-
-            const token = jwt.sign({
-                id: body.id 
-            }, 'miniproject')
-
-            res.status(200).json({ token });
-
-        } else {
-            res.status(401).json({ message: 'wrong password' })
-        }
-
-    }
-
 
 }
 
