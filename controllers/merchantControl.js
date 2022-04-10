@@ -14,7 +14,7 @@ class controllerMerchant {
             req.body.phone_number];
         
 
-        db.query(   Merchant.addMerchant(),[values],(err)=>{
+        db.query(Merchant.addMerchant(),[values],(err)=>{
             if(err){
                 res.status(400).json(err)
                 return

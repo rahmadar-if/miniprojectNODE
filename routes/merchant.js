@@ -6,8 +6,9 @@ const middleware = require('../middleware/auth')
     // LOGIN , GET  JWT TOKEN , VALIDATE JWT
     router.post('/login', middleware.login);
 
-    router.get('/login', middleware.validate, (req, res) => {
-        res.status(200).json({ message: 'Password Match' })
+    // router.get('/login', middleware.validate);
+    router.get('/login', middleware.validate, (req, res,) => {
+        res.status(200).json({ message: 'authorized' }) 
     });
 
     // CREATE (FOR DB)

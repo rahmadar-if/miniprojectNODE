@@ -1,5 +1,4 @@
 const express = require('express')
-const fs = require('fs')
 const router = express.Router()
 const controllerProduct = require('../controllers/productControl')
 const middleware = require('../middleware/auth')
